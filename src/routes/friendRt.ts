@@ -1,8 +1,9 @@
 import express from "express";
-import { HomeIndex } from "../controllers/friendCon";
+import { FRIENDS } from "../controllers/friendCon";
 
 export const friendRt: express.Router = express.Router();
-    friendRt.get("/", HomeIndex);
+    friendRt.post("/", FRIENDS.Create);
+    friendRt.get("/", FRIENDS.FetchAll);
 
 
 
