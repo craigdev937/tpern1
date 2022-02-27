@@ -5,6 +5,7 @@ module.exports = [
         url: process.env.DATABASE_URL,
         synchronize: true,
         logging: false,
+        extra: { ssl: true },
         entities: ["dist/models/**/*.js"],
         migrations: ["src/migrations/**/*.ts"],
         subscribers: ["src/subscribers/**/*.ts"],
