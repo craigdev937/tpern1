@@ -5,6 +5,7 @@
         "strictPropertyInitialization": false,
         "rootDir": "./src/",
         "outDir": "./dist/",
+        "resolveJsonModule": true,
         "forceConsistentCasingInFileNames": true,
         "isolatedModules": true,
         "module": "commonjs",

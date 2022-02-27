@@ -5,10 +5,11 @@ import logger from "morgan";
 import helmet from "helmet";
 import { trim } from "./middleware/trim";
 import { friendRt } from "./routes/friendRt";
-import { createConnection } from "typeorm";
+import { createConnection, getConnectionOptions } from "typeorm";
 
 (async () => {
-    await createConnection();
+    const DBOptions = await getConnectionOptions();
+    createConnection({...DBOptions});
     console.log("PostgreSQL is now Connected!");
     const app: express.Application = express();
     app.use(helmet());
